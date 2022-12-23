@@ -1,258 +1,385 @@
+repeat
+    wait()
+until game:IsLoaded() and game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR") and game.Players.LocalPlayer.PlayerGui.MainScreenGui:FindFirstChild("AnimationPack") and game.Players.LocalPlayer.PlayerGui.MainScreenGui:FindFirstChild("AnimationPlusPack")
  
- 
-for _, v in next, game:GetService("CoreGui"):GetChildren() do
-    if (v.Name:match("Animation")) then
-        v:Destroy()
-    end
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Lean") then
+    game.ReplicatedStorage.ClientAnimations.Lean:Destroy()
 end
  
-local Folder = Instance.new('Folder', game:GetService("Workspace"))
-Folder.Name = ("Animation")
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Lay") then
+    game.ReplicatedStorage.ClientAnimations.Lay:Destroy()
+end
  
-local LeanAnimation = Instance.new("Animation", Folder)
-LeanAnimation.Name = "LeanAnimation"
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Dance1") then
+    game.ReplicatedStorage.ClientAnimations.Dance1:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Dance2") then
+    game.ReplicatedStorage.ClientAnimations.Dance2:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Greet") then
+    game.ReplicatedStorage.ClientAnimations.Greet:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Chest Pump") then
+    game.ReplicatedStorage.ClientAnimations["Chest Pump"]:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Praying") then
+    game.ReplicatedStorage.ClientAnimations.Praying:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("TheDefault") then
+    game.ReplicatedStorage.ClientAnimations.TheDefault:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Sturdy") then
+    game.ReplicatedStorage.ClientAnimations.Sturdy:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Rossy") then
+    game.ReplicatedStorage.ClientAnimations.Rossy:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("Griddy") then
+    game.ReplicatedStorage.ClientAnimations.Griddy:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("TPose") then
+    game.ReplicatedStorage.ClientAnimations.TPose:Destroy()
+end
+ 
+if game.ReplicatedStorage.ClientAnimations:FindFirstChild("SpeedBlitz") then
+    game.ReplicatedStorage.ClientAnimations.SpeedBlitz:Destroy()
+end
+ 
+local Animations = game.ReplicatedStorage.ClientAnimations
+ 
+local LeanAnimation = Instance.new("Animation", Animations)
+LeanAnimation.Name = "Lean"
 LeanAnimation.AnimationId = "rbxassetid://3152375249"
  
-local LayAnimation = Instance.new("Animation", Folder)
-LayAnimation.Name = "LayAnimation"
+local LayAnimation = Instance.new("Animation", Animations)
+LayAnimation.Name = "Lay"
 LayAnimation.AnimationId = "rbxassetid://3152378852"
  
-local Dance1Animation = Instance.new("Animation", Folder)
-Dance1Animation.Name = "Dance1Animation"
+local Dance1Animation = Instance.new("Animation", Animations)
+Dance1Animation.Name = "Dance1"
 Dance1Animation.AnimationId = "rbxassetid://3189773368"
  
-local Dance2Animation = Instance.new("Animation", Folder)
-Dance2Animation.Name = "Dance2Animation"
+local Dance2Animation = Instance.new("Animation", Animations)
+Dance2Animation.Name = "Dance2"
 Dance2Animation.AnimationId = "rbxassetid://3189776546"
  
-local GreetAnimation = Instance.new("Animation", Folder)
-GreetAnimation.Name = "GreetAnimation"
+local GreetAnimation = Instance.new("Animation", Animations)
+GreetAnimation.Name = "Greet"
 GreetAnimation.AnimationId = "rbxassetid://3189777795"
  
-local ChestPumpAnimation = Instance.new("Animation", Folder)
-ChestPumpAnimation.Name = "ChestPumpAnimation"
+local ChestPumpAnimation = Instance.new("Animation", Animations)
+ChestPumpAnimation.Name = "Chest Pump"
 ChestPumpAnimation.AnimationId = "rbxassetid://3189779152"
  
-local PrayingAnimation = Instance.new("Animation", Folder)
-PrayingAnimation.Name = "PrayingAnimation"
+local PrayingAnimation = Instance.new("Animation", Animations)
+PrayingAnimation.Name = "Praying"
 PrayingAnimation.AnimationId = "rbxassetid://3487719500"
  
-if game.PlaceId == 2788229376 then
-    function AnimationPack(Character)
-        Character:WaitForChild'HumanoidRootPart'
-        local Animation = Instance.new("ScreenGui")
-        local AnimationPack = Instance.new("TextButton")
-        local CloseButton = Instance.new("TextButton")
-        local ScrollingFrame = Instance.new("ScrollingFrame")
-        local ChestPumpButton = Instance.new("TextButton")
-        local Dance1Button = Instance.new("TextButton")
-        local Dance2Button = Instance.new("TextButton")
-        local LayButton = Instance.new("TextButton")
-        local GreetButton = Instance.new("TextButton")
-        local LeanButton = Instance.new("TextButton")
-        local PrayingButton = Instance.new("TextButton")
+local TheDefaultAnimation = Instance.new("Animation", Animations)
+TheDefaultAnimation.Name = "TheDefault"
+TheDefaultAnimation.AnimationId = "rbxassetid://11710529975" -- FIX THIS
  
-        Animation.Name = "Animation"
-        Animation.Parent = game.CoreGui
-        Animation.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local SturdyAnimation = Instance.new("Animation", Animations)
+SturdyAnimation.Name = "Sturdy"
+SturdyAnimation.AnimationId = "rbxassetid://11710524717"
  
-        AnimationPack.Name = "AnimationPack"
-        AnimationPack.Parent = Animation
-        AnimationPack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        AnimationPack.BorderSizePixel = 0
-        AnimationPack.Position = UDim2.new(0, 0, 0.5, 0)
-        AnimationPack.Size = UDim2.new(0, 100, 0, 20)
-        AnimationPack.Visible = false
-        AnimationPack.Font = Enum.Font.SourceSansBold
-        AnimationPack.Text = "Animations"
-        AnimationPack.TextColor3 = Color3.fromRGB(0, 0, 0)
-        AnimationPack.TextSize = 18.000
+local RossyAnimation = Instance.new("Animation", Animations)
+RossyAnimation.Name = "Rossy"
+RossyAnimation.AnimationId = "rbxassetid://11710527244"
  
-        CloseButton.Name = "CloseButton"
-        CloseButton.Parent = AnimationPack
-        CloseButton.BackgroundColor3 = Color3.fromRGB(255, 112, 112)
-        CloseButton.Position = UDim2.new(0, 0, 0, 97)
-        CloseButton.Size = UDim2.new(0, 120, 0, 25)
-        CloseButton.Visible = false
-        CloseButton.Font = Enum.Font.SourceSansBold
-        CloseButton.Text = "CLOSE"
-        CloseButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-        CloseButton.TextSize = 30.000
+local GriddyAnimation = Instance.new("Animation", Animations)
+GriddyAnimation.Name = "Griddy"
+GriddyAnimation.AnimationId = "rbxassetid://11710529220"
  
-        ScrollingFrame.Parent = AnimationPack
-        ScrollingFrame.Active = true
-        ScrollingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-        ScrollingFrame.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
-        ScrollingFrame.Position = UDim2.new(0, 60, 0, 0)
-        ScrollingFrame.Size = UDim2.new(0, 120, 0, 195)
-        ScrollingFrame.Visible = false
-        ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1, 200)
+local TPoseAnimation = Instance.new("Animation", Animations)
+TPoseAnimation.Name = "TPose"
+TPoseAnimation.AnimationId = "rbxassetid://11710524200"
  
-        ChestPumpButton.Name = "ChestPumpButton"
-        ChestPumpButton.Parent = ScrollingFrame
-        ChestPumpButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        ChestPumpButton.Position = UDim2.new(0, 0, 0.727272749, 0)
-        ChestPumpButton.Size = UDim2.new(1, 0, 0, 30)
-        ChestPumpButton.Font = Enum.Font.GothamBlack
-        ChestPumpButton.Text = "Chest Pump"
-        ChestPumpButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-        ChestPumpButton.TextSize = 12.000
-        ChestPumpButton.TextWrapped = true
+local SpeedBlitzAnimation = Instance.new("Animation", Animations)
+SpeedBlitzAnimation.Name = "SpeedBlitz"
+SpeedBlitzAnimation.AnimationId = "rbxassetid://11710541744"
  
-        Dance1Button.Name = "Dance1Button"
-        Dance1Button.Parent = ScrollingFrame
-        Dance1Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Dance1Button.Position = UDim2.new(0, 0, 0.290909111, 0)
-        Dance1Button.Size = UDim2.new(1, 0, 0, 30)
-        Dance1Button.Font = Enum.Font.GothamBlack
-        Dance1Button.Text = "Dance1"
-        Dance1Button.TextColor3 = Color3.fromRGB(0, 0, 0)
-        Dance1Button.TextSize = 12.000
-        Dance1Button.TextWrapped = true
+function AnimationPack(Character)
+    Character:WaitForChild'Humanoid'
+    repeat
+        wait()
+    until game.Players.LocalPlayer.Character:FindFirstChild("FULLY_LOADED_CHAR") and game.Players.LocalPlayer.PlayerGui.MainScreenGui:FindFirstChild("AnimationPack") and game.Players.LocalPlayer.PlayerGui.MainScreenGui:FindFirstChild("AnimationPlusPack")
  
-        Dance2Button.Name = "Dance2Button"
-        Dance2Button.Parent = ScrollingFrame
-        Dance2Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Dance2Button.Position = UDim2.new(0, 0, 0.436363667, 0)
-        Dance2Button.Size = UDim2.new(1, 0, 0, 30)
-        Dance2Button.Font = Enum.Font.GothamBlack
-        Dance2Button.Text = "Dance2"
-        Dance2Button.TextColor3 = Color3.fromRGB(0, 0, 0)
-        Dance2Button.TextSize = 12.000
-        Dance2Button.TextWrapped = true
+    local AnimationPack = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.AnimationPack
+    local AnimationPackPlus = game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.AnimationPlusPack
+    local ScrollingFrame = AnimationPack.ScrollingFrame
+    local CloseButton = AnimationPack.CloseButton
+    local ScrollingFramePlus = AnimationPackPlus.ScrollingFrame
+    local CloseButtonPlus = AnimationPackPlus.CloseButton
  
-        LayButton.Name = "LayButton"
-        LayButton.Parent = ScrollingFrame
-        LayButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        LayButton.Position = UDim2.new(0, 0, 0.145454556, 0)
-        LayButton.Size = UDim2.new(1, 0, 0, 30)
-        LayButton.Font = Enum.Font.GothamBlack
-        LayButton.Text = "Lay"
-        LayButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-        LayButton.TextSize = 12.000
-        LayButton.TextWrapped = true
+    local Lean = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LeanAnimation)
  
-        GreetButton.Name = "GreetButton"
-        GreetButton.Parent = ScrollingFrame
-        GreetButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        GreetButton.Position = UDim2.new(0, 0, 0.581818223, 0)
-        GreetButton.Size = UDim2.new(1, 0, 0, 30)
-        GreetButton.Font = Enum.Font.GothamBlack
-        GreetButton.Text = "Greet"
-        GreetButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-        GreetButton.TextSize = 12.000
-        GreetButton.TextWrapped = true
+    local Lay = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LayAnimation)
  
-        LeanButton.Name = "LeanButton"
-        LeanButton.Parent = ScrollingFrame
-        LeanButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        LeanButton.Size = UDim2.new(1, 0, 0, 30)
-        LeanButton.Font = Enum.Font.GothamBlack
-        LeanButton.Text = "Lean"
-        LeanButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-        LeanButton.TextSize = 12.000
-        LeanButton.TextWrapped = true
+    local Dance1 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance1Animation)
  
-        PrayingButton.Name = "PrayingButton"
-        PrayingButton.Parent = ScrollingFrame
-        PrayingButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        PrayingButton.Position = UDim2.new(5.96046448e-08, 0, 0.872727275, 0)
-        PrayingButton.Size = UDim2.new(1, 0, 0, 30)
-        PrayingButton.Font = Enum.Font.GothamBlack
-        PrayingButton.Text = "Praying"
-        PrayingButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-        PrayingButton.TextSize = 12.000
-        PrayingButton.TextWrapped = true
+    local Dance2 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance2Animation)
  
-        wait(1)
+    local Greet = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(GreetAnimation)
  
-        local AnimationPack = game:GetService("CoreGui").Animation.AnimationPack
-        local ScrollingFrame = AnimationPack.ScrollingFrame
-        local CloseButton = AnimationPack.CloseButton
+    local ChestPump = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(ChestPumpAnimation)
  
-        AnimationPack.Visible = true
+    local Praying = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(PrayingAnimation)
  
-        local Lean = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LeanAnimation)
+    local TheDefault = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(TheDefaultAnimation)
  
-        local Lay = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LayAnimation)
+    local Sturdy = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(SturdyAnimation)
  
-        local Dance1 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance1Animation)
+    local Rossy = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(RossyAnimation)
  
-        local Dance2 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance2Animation)
+    local Griddy = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(GriddyAnimation)
  
-        local Greet = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(GreetAnimation)
+    local TPose = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(TPoseAnimation)
  
-        local ChestPump = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(ChestPumpAnimation)
+    local SpeedBlitz = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(SpeedBlitzAnimation)
  
-        local Praying = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(PrayingAnimation)
+    AnimationPack.Visible = true
  
-        function Stop()
-            Lay:Stop()
-            Lean:Stop()
-            Dance1:Stop()
-            Dance2:Stop()
-            Greet:Stop()
-            ChestPump:Stop()
-            Praying:Stop()
+    AnimationPackPlus.Visible = true
+ 
+    ScrollingFrame.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+ 
+    ScrollingFramePlus.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+ 
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Lean" then
+                v.Name = "LeanButton"
+            end
         end
- 
-        local LeanTextButton = ScrollingFrame.LeanButton
-        local LayTextButton = ScrollingFrame.LayButton
-        local Dance1TextButton = ScrollingFrame.Dance1Button
-        local Dance2TextButton = ScrollingFrame.Dance2Button
-        local GreetTextButton = ScrollingFrame.GreetButton
-        local ChestPumpTextButton = ScrollingFrame.ChestPumpButton
-        local PrayingTextButton = ScrollingFrame.PrayingButton
- 
-        AnimationPack.MouseButton1Click:Connect(function()
-            if ScrollingFrame.Visible == false then
-                ScrollingFrame.Visible = true
-                CloseButton.Visible = true
-            end
-        end)
-        CloseButton.MouseButton1Click:Connect(function()
-            if ScrollingFrame.Visible == true then
-                ScrollingFrame.Visible = false
-                CloseButton.Visible = false
-            end
-        end)
-        LeanTextButton.MouseButton1Click:Connect(function()
-            Stop()
-            Lean:Play()
-        end)
-        LayTextButton.MouseButton1Click:Connect(function()
-            Stop()
-            Lay:Play()
-        end)
-        Dance1TextButton.MouseButton1Click:Connect(function()
-            Stop()
-            Dance1:Play()
-        end)
-        Dance2TextButton.MouseButton1Click:Connect(function()
-            Stop()
-            Dance2:Play()
-        end)
-        GreetTextButton.MouseButton1Click:Connect(function()
-            Stop()
-            Greet:Play()
-        end)
-        ChestPumpTextButton.MouseButton1Click:Connect(function()
-            Stop()
-            ChestPump:Play()
-        end)
-        PrayingTextButton.MouseButton1Click:Connect(function()
-            Stop()
-            Praying:Play()
-        end)
- 
-        game:GetService("Players").LocalPlayer.Character.Humanoid.Running:Connect(function()
-            Stop()
-        end)
-        game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
-            game.CoreGui.Animation:Destroy()
-        end)
-    end
-    AnimationPack(game.Players.LocalPlayer.Character)
-    game.Players.LocalPlayer.CharacterAdded:Connect(AnimationPack)
     end
  
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Lay" then
+                v.Name = "LayButton"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Dance1" then
+                v.Name = "Dance1Button"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Dance2" then
+                v.Name = "Dance2Button"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Greet" then
+                v.Name = "GreetButton"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Chest Pump" then
+                v.Name = "ChestPumpButton"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFrame:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Praying" then
+                v.Name = "PrayingButton"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "The Default" then
+                v.Name = "TheDefaultButton"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Sturdy" then
+                v.Name = "SturdyButton"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Rossy" then
+                v.Name = "RossyButton"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Griddy" then
+                v.Name = "GriddyButton"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "T Pose" then
+                v.Name = "TPoseButton"
+            end
+        end
+    end
+ 
+    for i,v in pairs(ScrollingFramePlus:GetChildren()) do
+        if v.Name == "TextButton" then
+            if v.Text == "Speed Blitz" then
+                v.Name = "SpeedBlitzButton"
+            end
+        end
+    end
+ 
+    function Stop()
+        Lean:Stop()
+        Lay:Stop()
+        Dance1:Stop()
+        Dance2:Stop()
+        Greet:Stop()
+        ChestPump:Stop()
+        Praying:Stop()
+        TheDefault:Stop()
+        Sturdy:Stop()
+        Rossy:Stop()
+        Griddy:Stop()
+        TPose:Stop()
+        SpeedBlitz:Stop()
+    end
+ 
+    --credit Zackary#1011 (again cuz someone might skid this to their script)
+ 
+    local LeanTextButton = ScrollingFrame.LeanButton
+    local LayTextButton = ScrollingFrame.LayButton
+    local Dance1TextButton = ScrollingFrame.Dance1Button
+    local Dance2TextButton = ScrollingFrame.Dance2Button
+    local GreetTextButton = ScrollingFrame.GreetButton
+    local ChestPumpTextButton = ScrollingFrame.ChestPumpButton
+    local PrayingTextButton = ScrollingFrame.PrayingButton
+    local TheDefaultTextButton = ScrollingFramePlus.TheDefaultButton
+    local SturdyTextButton = ScrollingFramePlus.SturdyButton
+    local RossyTextButton = ScrollingFramePlus.RossyButton
+    local GriddyTextButton = ScrollingFramePlus.GriddyButton
+    local TPoseTextButton = ScrollingFramePlus.TPoseButton
+    local SpeedBlitzTextButton = ScrollingFramePlus.SpeedBlitzButton
+ 
+    AnimationPack.MouseButton1Click:Connect(function()
+        if ScrollingFrame.Visible == false then
+            ScrollingFrame.Visible = true
+            CloseButton.Visible = true
+            AnimationPackPlus.Visible = false
+        end
+    end)
+    AnimationPackPlus.MouseButton1Click:Connect(function()
+        if ScrollingFramePlus.Visible == false then
+            ScrollingFramePlus.Visible = true
+            CloseButtonPlus.Visible = true
+            AnimationPack.Visible = false
+        end
+    end)
+    CloseButton.MouseButton1Click:Connect(function()
+        if ScrollingFrame.Visible == true then
+            ScrollingFrame.Visible = false
+            CloseButton.Visible = false
+            AnimationPackPlus.Visible = true
+        end
+    end)
+    CloseButtonPlus.MouseButton1Click:Connect(function()
+        if ScrollingFramePlus.Visible == true then
+            ScrollingFramePlus.Visible = false
+            CloseButtonPlus.Visible = false
+            AnimationPack.Visible = true
+        end
+    end)
+ 
+    LeanTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Lean:Play()
+    end)
+    LayTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Lay:Play()
+    end)
+    Dance1TextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Dance1:Play()
+    end)
+    Dance2TextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Dance2:Play()
+    end)
+    GreetTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Greet:Play()
+    end)
+    ChestPumpTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        ChestPump:Play()
+    end)
+    PrayingTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Praying:Play()
+    end)
+    TheDefaultTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        TheDefault:Play()
+    end)
+    SturdyTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Sturdy:Play()
+    end)
+    RossyTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Rossy:Play()
+    end)
+    GriddyTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Griddy:Play()
+    end)
+    TPoseTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        TPose:Play()
+    end)
+    SpeedBlitzTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        SpeedBlitz:Play()
+    end)
+ 
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Running:Connect(function()
+        Stop()
+    end)
+ 
+    game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+        Stop()
+    end)
+end
+AnimationPack(game.Players.LocalPlayer.Character)
+game.Players.LocalPlayer.CharacterAdded:Connect(AnimationPack)
